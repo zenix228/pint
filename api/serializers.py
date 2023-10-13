@@ -5,11 +5,7 @@ from app.models import Category, Product, CustomUser
 class CategorySerializers(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = [
-            'id',
-            'username',
-            'password'
-        ]
+        fields = '__all__'
 
         def get_image(self, obj):
             request = self.context.get('request')
@@ -26,4 +22,8 @@ class ProductSerializers(serializers.ModelSerializer):
 class CustomUserSerializers(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
-        fields = '__all__'
+        fields = [
+            'id',
+            'username',
+            'password'
+        ]
