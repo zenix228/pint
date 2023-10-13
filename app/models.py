@@ -15,7 +15,7 @@ class Category(models.Model):
         max_length=255,
         blank=True,
         null=True
-    ),
+    )
     slug = models.SlugField(max_length=255, unique=True)
 
     class Meta:
@@ -33,7 +33,7 @@ class Category(models.Model):
         return reverse(
             args=[self.slug]
         )
-    
+
 class Product(models.Model):
     title = models.CharField(max_length=256)
     slug = models.SlugField('Слаг', max_length=255)
@@ -52,8 +52,7 @@ class Product(models.Model):
         ordering = ['title']
         indexes = [
             models.Index(fields=['id', 'slug']),
-            models.Index(fields=['title']),
-            models.Index(fields=['-created'])
+            models.Index(fields=['title'])
         ]
 
     def get_absolute_url(self):

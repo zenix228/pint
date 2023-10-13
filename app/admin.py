@@ -4,8 +4,8 @@ from .models import Category, Product
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('id', 'slug')
-    list_display_links = ('id', 'slug')
+    list_display = ('id', 'name', 'slug')
+    list_display_links = ('id', 'name', 'slug')
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
