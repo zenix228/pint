@@ -5,7 +5,11 @@ from app.models import Category, Product, CustomUser
 class CategorySerializers(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = '__all__'
+        fields = [
+            'id',
+            'username',
+            'password'
+        ]
 
         def get_image(self, obj):
             request = self.context.get('request')
