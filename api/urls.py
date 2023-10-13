@@ -8,5 +8,7 @@ urlpatterns = [
     path('category/', category),
     path('category/<int:pk>/', category_detail),
     path('product/', product),
-    path('product/<int:pk>/', product_detail)
+    path('product/<int:pk>/', product_detail),
+
+    path('auth/', include('dj_rest_auth.urls'))
 ]
